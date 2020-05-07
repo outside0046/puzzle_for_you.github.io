@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<title>puzzle for you</title>
+<LINK REL=StyleSheet HREF="kartina.css" TYPE="text/css" MEDIA=screen>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <style>
+    body {
+      padding: 20px;
+    }
+    .row {
+      display: flex;
+      height: 100px;
+    }
+    .col {
+      width: 100px;
+      border: 1px solid #000;
+    }
+    .images img {
+      width: 100px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+   <div id="page">
+	<div id="header">
+			
+	</div>
+	
+<nav id="nav-3">
+  <a class="link-3" href="index.html">..........</a>
+  <a class="link-4" href="mops.html">..........</a>
+  <a class="link-5" href="pyx.html">..........</a>
+  <a class="link-6" href="#">..........</a>
+</nav>
+
+
+
+<div id="mainarea">
+	<div id="contentarea">
+		<h3 style="color:white;">Ready to play?</h3>
+		
+	
+	
+	
+  <div class="puzzle;">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+  </div>
+  
+  <div class="images">
+      <img id="pazl_01" draggable="true" src="images/kartina_01.jpg">
+      <img id="pazl_02" draggable="true" src="images/kartina_02.jpg">
+      <img id="pazl_03" draggable="true" src="images/kartina_03.jpg">
+      <img id="pazl_04" draggable="true" src="images/kartina_04.jpg">
+      <img id="pazl_05" draggable="true" src="images/kartina_05.jpg">
+      <img id="pazl_06" draggable="true" src="images/kartina_06.jpg">
+      <img id="pazl_07" draggable="true" src="images/kartina_07.jpg">
+      <img id="pazl_08" draggable="true" src="images/kartina_08.jpg">
+      <img id="pazl_09" draggable="true" src="images/kartina_09.jpg">
+      <img id="pazl_10" draggable="true" src="images/kartina_10.jpg">
+      <img id="pazl_11" draggable="true" src="images/kartina_11.jpg">
+      <img id="pazl_12" draggable="true" src="images/kartina_12.jpg">
+      <img id="pazl_13" draggable="true" src="images/kartina_13.jpg">
+      <img id="pazl_14" draggable="true" src="images/kartina_14.jpg">
+      <img id="pazl_15" draggable="true" src="images/kartina_15.jpg">
+      <img id="pazl_16" draggable="true" src="images/kartina_16.jpg">
+      
+  </div>
+  
+ <div id="wordwrite">
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		.
+		<br>
+		
+	</div></div>
+	
+<div id="sidebar">
+		<h3 style="text-align:center;">Pug breed</h3>
+		<h3 style="text-align:center">Freudian theory underpins Dalí's attempts at forging a
+         <br>
+	 visual language capable of rendering his dreams and hallucinations. These account for some 
+	<br>
+	of the iconic and now ubiquitous images through which Dalí achieved tremendous fame during 
+	<br>
+	his lifetime and beyond.</h3>
+		<p style="text-align:center;"><h3>
+		
+</p></h3>
+
+
+		<strong>.</strong>
+	</div></div>
+  <script>
+    {
+      const dragstart = function(event) {
+        event.dataTransfer.setData("text", event.target.id);
+      };
+      const dragover = function(event) {
+        if(event.target.nodeName.toLowerCase() === "img") {
+          return true;
+        }
+        event.preventDefault();
+      }
+      const drop = function(event) {
+        event.preventDefault();
+        let imageId = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(imageId));
+      };
+
+      const cells = document.getElementsByClassName("col");
+      Array.from(cells).forEach((element) => {
+        element.addEventListener('dragover',dragover);
+        element.addEventListener('drop',drop);
+      });      
+
+      const images = document.getElementsByTagName("img");
+      Array.from(images).forEach((element) => {
+        element.addEventListener('dragstart',dragstart);
+      });
+    }
+  </script>
+ 
+  
+  <div id="footer">
+		Designed by <a href="https://github.com/julia40302010"><strong>Julia Dubyna</strong></a>
+	</div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+<title>puzzle for you</title>
+<LINK REL=StyleSheet HREF="style.css" TYPE="text/css" MEDIA=screen>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <style>
+    body {
+      padding: 20px;
+    }
+    .row {
+      display: flex;
+      height: 100px;
+    }
+    .col {
+      width: 100px;
+      border: 1px solid #000;
+    }
+    .images img {
+      width: 100px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+   <div id="page">
+	<div id="header">
+			
+	</div>
+	
+<nav id="nav-3">
+  <a class="link-3" href="#">..........</a>
+  <a class="link-4" href="mops.html">..........</a>
+  <a class="link-5" href="pyx.html">..........</a>
+  <a class="link-6" href="kartina.html">..........</a>
+</nav>
+
+
+
+<div id="mainarea">
+	<div id="contentarea">
+		<h2 style="color:white;">Ready to play?</h2>
+		
+	
+	
+	
+  <div class="puzzle">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+  </div>
+  
+  <div class="images">
+      <img id="pazl_01" draggable="true" src="images/pazl_01.jpg">
+      <img id="pazl_02" draggable="true" src="images/pazl_02.jpg">
+      <img id="pazl_03" draggable="true" src="images/pazl_03.jpg">
+      <img id="pazl_04" draggable="true" src="images/pazl_04.jpg">
+      <img id="pazl_05" draggable="true" src="images/pazl_05.jpg">
+      <img id="pazl_06" draggable="true" src="images/pazl_06.jpg">
+      <img id="pazl_07" draggable="true" src="images/pazl_07.jpg">
+      <img id="pazl_08" draggable="true" src="images/pazl_08.jpg">
+      <img id="pazl_09" draggable="true" src="images/pazl_09.jpg">
+      <img id="pazl_10" draggable="true" src="images/pazl_10.jpg">
+      <img id="pazl_11" draggable="true" src="images/pazl_11.jpg">
+      <img id="pazl_12" draggable="true" src="images/pazl_12.jpg">
+      <img id="pazl_13" draggable="true" src="images/pazl_13.jpg">
+      <img id="pazl_14" draggable="true" src="images/pazl_14.jpg">
+      <img id="pazl_15" draggable="true" src="images/pazl_15.jpg">
+      <img id="pazl_16" draggable="true" src="images/pazl_16.jpg">
+      
+  </div>
+  
+ <div id="wordwrite">
+		Once upon a time there was a unicorn called Shine, she lived in the enchanted woods where fairies and elves lived. The land wasn't really anywhere, it was just a place where you could only dream and think off.
+		<br>
+
+Shine's owner was a fairy and her name was Princess Annie. Annie lived in a big sparkly palace and gems surrounded her beautiful stables where Shine lives.
+<br>
+
+She ran as fast as she could back to the palace where all the other unicorns admired her beautiful gold sparkles and pink and purple wings.
+<br>
+Shine was never unhappy again and lived happily ever after in the enchanted woods with Princess Annie and all her friendly unicorns.
+<br>
+The End.
+<br>
+	</div></div>
+	
+<div id="sidebar">
+		<h2 style="text-align:center;">Poem about Unicorn</h2>
+		<p style="text-align:center;"><h3>
+		Early morning mist
+		<br>
+Lies thick along the moor
+<br>
+His eyes search
+<br>
+Hoping to catch a glimpse
+<br>
+Of her perfect beauty
+<br>
+a myth
+<br>
+Existing only in dreams
+<br>
+Or the imaginings of poets
+<br>
+In his heart he knew she lived
+<br>
+Prancing in the fields
+<br>
+The magical,
+<br>
+Elusive unicorn.
+<br>
+</p></h3>
+
+
+		<strong>@cyclemaniac</strong>
+	</div></div>
+  <script>
+    {
+      const dragstart = function(event) {
+        event.dataTransfer.setData("text", event.target.id);
+      };
+      const dragover = function(event) {
+        if(event.target.nodeName.toLowerCase() === "img") {
+          return true;
+        }
+        event.preventDefault();
+      }
+      const drop = function(event) {
+        event.preventDefault();
+        let imageId = event.dataTransfer.getData("text");
+        event.target.appendChild(document.getElementById(imageId));
+      };
+
+      const cells = document.getElementsByClassName("col");
+      Array.from(cells).forEach((element) => {
+        element.addEventListener('dragover',dragover);
+        element.addEventListener('drop',drop);
+      });      
+
+      const images = document.getElementsByTagName("img");
+      Array.from(images).forEach((element) => {
+        element.addEventListener('dragstart',dragstart);
+      });
+    }
+  </script>
+ 
+  
+  <div id="footer">
+		Designed by <a href="https://github.com/julia40302010"><strong>Julia Dubyna</strong></a>
+	</div>
+
+
+</div>
+</body>
+</html>
